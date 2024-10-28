@@ -1,0 +1,281 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden; /* Evita desplazamiento horizontal */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav {
+  display: none;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-left: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav.visible {
+  display: block;
+  text-align: center;
+}
+
+/* Hero Section */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/images/Maicito_taller_fondo_2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px); /* Efecto desenfocado */
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  position: relative;
+}
+/*Background eventos*/
+
+/* Eventos, About, Contacto Sections */
+.eventos-section {
+  background-color: #ffcc80;
+}
+
+.about-section {
+  background-image: url('../public/images/fondo_acerca.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacto-section {
+  background-color: #ffab91;
+}
+
+.content-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  border: 8px double #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.content-section h1 {
+  color: #FF9624;
+  text-align: center;
+  font-size: 36px;
+}
+
+.content-section p {
+  color: #333;
+  font-size: 18px;
+  text-align: justify;
+}
+
+/* Responsive Nav Menu */
+.nav {
+  display: none;
+}
+
+.nav.visible {
+  display: block;
+  text-align: center; 
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+}
+.video-responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.login-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; /* Centra el formulario */
+}
+
+h2 {
+  text-align: center;
+  color: #009B77;
+}
+
+
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .nav.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw; /* Evita desbordamiento en móviles */
+    background-color: white;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 40px 10px;
+  }
+}
+/* Carrusel */
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-images {
+  width: 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+
+
+footer {
+  background-color: #f8f8f8;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  border-top: 1px solid #eaeaea;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons li a {
+  text-decoration: none;
+  font-size: 32px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icons li a:hover {
+  color: #ff9933; /* Cambia el color al pasar el cursor */
+}
+
